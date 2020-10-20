@@ -16,6 +16,13 @@ class Laboratory
         void addComputer (const Computer &c);
         void mostrar();
 
+        friend Laboratory& operator<<(Laboratory &lb, const Computer &c){
+
+            lb.addComputer(c);
+
+            return lb;
+        }
+
 };
 
 #endif // LABORATORY_H

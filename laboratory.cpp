@@ -21,14 +21,16 @@ void Laboratory::addComputer(const Computer &c){
 }
 
 void Laboratory::mostrar(){
+    cout << left;
+    cout << setw(17) << "NOMBRE EQUIPO";
+    cout << setw(13) << "SISTEMA";
+    cout << setw(10) << "CPU";
+    cout << setw(5) << "RAM";
+    cout << endl;
 
     for(int i = 0; i<cont; i++){
         Computer &p = arreglo[i];
-        cout<<"Nombre: "<< p.getName()<<endl;
-        cout<<"Sistema Operativo: "<< p.getSystem()<<endl;
-        cout<<"Cpu: "<< p.getCpu()<<endl;
-        cout<<"Ram: "<< p.getRam()<<endl;
-        cout<<endl;
+        cout << p;
     }
 
 }

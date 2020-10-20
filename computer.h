@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class Computer
 {
@@ -31,6 +32,32 @@ class Computer
         std::string getSystem();
         std::string getCpu();
         int getRam();
+
+        friend std::ostream& operator << (std::ostream &out, Computer &c){
+
+         out << std::left;
+         out << std::setw(17) << c.name;
+         out << std::setw(13) << c.system;
+         out << std::setw(10) << c.cpu;
+         out << std::setw(5) << c.ram;
+         out << std::endl;
+
+         return out;
+
+        }
+        friend std::istream& operator >> (std::istream &in, Computer &c){
+        std::cout << "NOMBRE EQUIPO: ";
+        getline(std::cin, c.name);
+
+        std::cout << "SISTEMA: ";
+        getline (std::cin, c.system);
+
+        std::cout << "CPU: ";
+        getline (std::cin, c.cpu);
+
+        std::cout << "RAM: ";
+        std::cin >> c.ram;
+        }
 
 };
 

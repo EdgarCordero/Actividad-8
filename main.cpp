@@ -17,8 +17,14 @@ int main()
     c02.setRam(32);
 
     Laboratory lb;
-    lb.addComputer(c01);
-    lb.addComputer(c02);
+    //lb.addComputer(c01);
+    //lb.addComputer(c02);
+
+    Computer c03;
+    cin >> c03;
+    //lb.addComputer(c03);
+    lb << c01 << c02 << c03;
+
     lb.mostrar();
 
 }
